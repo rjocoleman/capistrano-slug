@@ -9,7 +9,7 @@ When a new server bootstraps I want it to have the current code (and config etc)
 
 This enables things like automatic provisioning of new servers but still allows for Capistrano deployments.
 
-Slug work happens on a single server only - the primary of the configured role (default `:all`).
+Slug work happens on a single server only - the primary of the configured role (default `:web`).
 
 
 ## Installation
@@ -99,7 +99,7 @@ $ cap staging slug:clean
 Configurable options, shown here with defaults:
 
 ```ruby
-set :slug_role, :all
+set :slug_role, :web
 set :slug_name, -> { fetch(:application) }
 set :slug_storage_backend, 's3'
 set :slug_s3_bucket, nil
