@@ -2,10 +2,11 @@
 
 [![Gem Version](https://badge.fury.io/rb/capistrano-slug.svg)](http://badge.fury.io/rb/capistrano-slug)
 
-Basically after a deploy is completed Capistrano packs up it's directory and sends it off for artifact deployment sometime else.
+Basically after a deploy is completed Capistrano packs up it's directory and sends it off for artifact deployment sometime else.  
 
-The initial use case is taking a point-in-time snapshot of Capistrano deployment, after every deployment, to use on newly bootstrapped servers.
-When a new server bootstraps I want it to have the current code (and config etc) that was deployed by Capistrano. This is achieved downloading and 'installing' the slug on boot of a new server.
+The initial use case is taking a point-in-time snapshot of Capistrano deployment, after every deployment, to use on newly bootstrapped servers.  
+When a new server bootstraps I want it to have the current code (and config etc) that was deployed by Capistrano without actually having to do a `cap deploy`.  
+This is achieved by downloading and 'installing' the slug on boot of a new server.
 
 This enables things like automatic provisioning of new servers but still allows for Capistrano deployments.
 
@@ -70,7 +71,7 @@ Creates a slug:
 
 ```shell
 $ cap staging slug:create
- INFO Created Slug: foo-application-slug.tar.gz
+ INFO Slug: Successfully created foo-application-slug.tar.gz
 ```
 
 
@@ -80,7 +81,7 @@ Uploads a slug to your configured storage:
 
 ```shell
 $ cap staging slug:upload
- INFO Uploaded Slug: foo-application-slug.tar.gz
+ INFO Slug: Uploaded foo-application-slug.tar.gz
 ```
 
 #### slug:clean
@@ -89,7 +90,7 @@ Removes a slug from your server (not it's storage):
 
 ```shell
 $ cap staging slug:clean
- INFO Cleaned Slug: foo-application-slug.tar.gz
+ INFO Slug: Cleaned foo-application-slug.tar.gz
 ```
 
 
