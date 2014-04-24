@@ -12,6 +12,8 @@ This enables things like automatic provisioning of new servers but still allows 
 
 Slug work happens on a single server only - the primary of the configured role (default `:web`).
 
+Here's an example of capistrano-slug in use: https://gist.github.com/rjocoleman/11268563
+
 
 ## Installation
 
